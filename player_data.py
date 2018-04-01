@@ -14,6 +14,9 @@ with open('player_data.json','r') as f:
 
 player_datas = []
 
+image_url = 'https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/{}/2017/260x190/{}.png'
+
+# print(image_url.format('1610612748','1626196'))
 for team in data:
     team_data = team['data']
     team_player = json.loads(team_data)
@@ -26,6 +29,7 @@ for team in data:
         player_data['height'] = player[6]
         player_data['weight'] = player[7]
         player_data['player_id'] = player[-1]
+        player_data['image'] = image_url.format(player[0],player[-1])
 
         player_datas.append(player_data)
 

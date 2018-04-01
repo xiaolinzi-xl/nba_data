@@ -12,6 +12,8 @@ player_datas = []
 for player1,player2 in zip(data1,data2):
     player_data = dict(player2)
     player_data['player_id'] = player1['player_id']
+    player_data['image'] = player1['image']
+
     # print(player_data)
 
     player_datas.append(player_data)
